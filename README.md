@@ -47,13 +47,13 @@ This project showcases the deployment of the Frappe Framework along with the ERP
     --build-arg=PYTHON_VERSION=3.11.6 \
     --build-arg=NODE_VERSION=18.18.2 \
     --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-    --tag=custom-hrms \
+    --tag=erpnext-hrms \
     --file=Docker/Dockerfile .
     ```
     - Push image to DockerHub 
     ```
     #change image tag
-    docker tag custom-hrms omartarekabdelall/frappe:hrms
+    docker tag erpnext-hrms lazypandabear/frappe:hrms
 
     docker login 
     docker push
@@ -64,7 +64,7 @@ This project showcases the deployment of the Frappe Framework along with the ERP
     You can have a quick set up and run to the entire application stack to view the app components and interact with it. Ensure you have Docker and Docker Compose installed on your machine.
 
     ### docker-compose file
-    - Used the built docker image `omartarekabdelall/frappe:hrms` 
+    - Used the built docker image `lazypandabear/frappe:hrms` 
     - Add the following command after site creation in order to install the HRMS APP to the bench site and dashbourd.
       ```
        bench --site frontend install-app hrms;
