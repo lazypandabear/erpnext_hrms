@@ -32,7 +32,12 @@ This project showcases the deployment of the Frappe Framework along with the ERP
     ```
     - Generate base64 string from the apps.json file 
     ```
+    For Linux
     export APPS_JSON_BASE64=$(base64 -w 0 apps.json)
+
+    For Windows
+    $APPS_JSON_BASE64 = [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("apps.json"))
+    [Environment]::SetEnvironmentVariable("APPS_JSON_BASE64", $APPS_JSON_BASE64, "User")
     ```
     - Build the docker file `Docker/Dockerfile`with the specified build arguments to customize the build process.
     ```
